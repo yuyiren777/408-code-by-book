@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// ¶¨ÒåË³Ğò±í½á¹¹Ìå
-#define MAXSIZE 100  // Ë³Ğò±í×î´óÈİÁ¿
+// å®šä¹‰é¡ºåºè¡¨ç»“æ„ä½“
+#define MAXSIZE 100  // é¡ºåºè¡¨æœ€å¤§å®¹é‡
 typedef struct {
-    int data[MAXSIZE];  // ´æ´¢Êı¾İµÄÊı×é
-    int length;         // Ë³Ğò±íÊµ¼Ê³¤¶È
+    int data[MAXSIZE];  // å­˜å‚¨æ•°æ®çš„æ•°ç»„
+    int length;         // é¡ºåºè¡¨å®é™…é•¿åº¦
 } SqList;
 
 /**
- * ºÏ²¢Á½¸öÓĞĞòË³Ğò±íÎªÒ»¸öĞÂµÄÓĞĞòË³Ğò±í
- * @param L1 µÚÒ»¸öÓĞĞòË³Ğò±í
- * @param L2 µÚ¶ş¸öÓĞĞòË³Ğò±í
- * @return ºÏ²¢ºóµÄĞÂÓĞĞòË³Ğò±í
+ * åˆå¹¶ä¸¤ä¸ªæœ‰åºé¡ºåºè¡¨ä¸ºä¸€ä¸ªæ–°çš„æœ‰åºé¡ºåºè¡¨
+ * @param L1 ç¬¬ä¸€ä¸ªæœ‰åºé¡ºåºè¡¨
+ * @param L2 ç¬¬äºŒä¸ªæœ‰åºé¡ºåºè¡¨
+ * @return åˆå¹¶åçš„æ–°æœ‰åºé¡ºåºè¡¨
  */
 SqList mergeTwoSortedSqList(SqList L1, SqList L2) {
     SqList result;
@@ -37,7 +37,7 @@ SqList mergeTwoSortedSqList(SqList L1, SqList L2) {
     return result;
 }
 
-// ¸¨Öúº¯Êı£º´òÓ¡Ë³Ğò±í
+// è¾…åŠ©å‡½æ•°ï¼šæ‰“å°é¡ºåºè¡¨
 void printSqList(SqList L) {
     for (int k = 0; k < L.length; k++) {
         printf("%d ", L.data[k]);
@@ -45,9 +45,9 @@ void printSqList(SqList L) {
     printf("\n");
 }
 
-// Ö÷º¯Êı²âÊÔ
+// ä¸»å‡½æ•°æµ‹è¯•
 int main() {
-    // ³õÊ¼»¯µÚÒ»¸öÓĞĞòË³Ğò±í L1: [1, 3, 5, 7, 9]
+    // åˆå§‹åŒ–ç¬¬ä¸€ä¸ªæœ‰åºé¡ºåºè¡¨ L1: [1, 3, 5, 7, 9]
     SqList L1;
     L1.length = 5;
     int arr1[] = { 1, 3, 5, 7, 9 };
@@ -55,7 +55,7 @@ int main() {
         L1.data[i] = arr1[i];
     }
 
-    // ³õÊ¼»¯µÚ¶ş¸öÓĞĞòË³Ğò±í L2: [2, 4, 6, 8, 10]
+    // åˆå§‹åŒ–ç¬¬äºŒä¸ªæœ‰åºé¡ºåºè¡¨ L2: [2, 4, 6, 8, 10]
     SqList L2;
     L2.length = 5;
     int arr2[] = { 2, 4, 6, 8, 10 };
@@ -63,15 +63,15 @@ int main() {
         L2.data[i] = arr2[i];
     }
 
-    // ºÏ²¢Á½¸öÓĞĞòË³Ğò±í
+    // åˆå¹¶ä¸¤ä¸ªæœ‰åºé¡ºåºè¡¨
     SqList result = mergeTwoSortedSqList(L1, L2);
 
-    // Êä³ö½á¹û
-    printf("Ô­Ë³Ğò±íL1: ");
+    // è¾“å‡ºç»“æœ
+    printf("åŸé¡ºåºè¡¨L1: ");
     printSqList(L1);
-    printf("Ô­Ë³Ğò±íL2: ");
+    printf("åŸé¡ºåºè¡¨L2: ");
     printSqList(L2);
-    printf("ºÏ²¢ºóµÄË³Ğò±í: ");
+    printf("åˆå¹¶åçš„é¡ºåºè¡¨: ");
     printSqList(result);
 
     return 0;
