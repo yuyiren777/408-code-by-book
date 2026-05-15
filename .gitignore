@@ -1,0 +1,19 @@
+# VS 相关文件
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+CppProperties.json
+
+# 编译生成的文件
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.idb
+*.ipch
+Debug/
+Release/
