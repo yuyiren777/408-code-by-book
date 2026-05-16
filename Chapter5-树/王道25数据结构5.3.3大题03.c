@@ -31,7 +31,7 @@ Stack pop() {
 
 
 int PostOrderNonRec(BiTree T, int arr[]) {
-    int top = -1;
+    
     int len = 0;
     if (T == NULL) { return 0; }
     push(T,0);
